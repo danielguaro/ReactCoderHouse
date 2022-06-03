@@ -72,6 +72,10 @@ header {
 	--rotat: rotate(90deg);
 }
 
+.menu_img_cart {
+	width: 54px;
+}
+
 .menu_link {
 	color: var(--principal-purple);
 	text-decoration: none;

@@ -1,7 +1,7 @@
 import './styleNavBar.css';
 
+import CartWidget from '../CartWidget/CartWidget';
 import arrowHoriz from '../../assets/images/arrowHoriz.svg';
-import cart from '../../assets/images/cart.svg';
 import contacto from '../../assets/images/contact.svg';
 import frase from '../../assets/images/mensaje.svg';
 import home from '../../assets/images/home.svg';
@@ -21,12 +21,6 @@ export const NavBar = () => {
 							<a href="./home.html" className="menu_link">
 								<img src={home} alt="home" className="menu_img" />
 								Inicio
-							</a>
-						</li>
-						<li className="menu_item">
-							<a href="./cart.html" className="menu_link">
-								<img src={cart} alt="Carro" className="menu_img" />
-								Carro
 							</a>
 						</li>
 						<li className="menu_item">
@@ -80,6 +74,7 @@ export const NavBar = () => {
 								contactanos
 							</a>
 						</li>
+						<CartWidget />
 					</ul>
 					<div className="menu_desplegable">
 						<img
