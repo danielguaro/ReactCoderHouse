@@ -1,7 +1,7 @@
-const ItemListContainer = () => {
+const ItemListContainer = ({ mensaje }) => {
 	return (
 		<>
-			<h2>Texto provisional, previo al catalogo </h2>
+			<h2>{mensaje} </h2>
 		</>
 	);
 };
