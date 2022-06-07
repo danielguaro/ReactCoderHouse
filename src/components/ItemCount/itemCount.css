@@ -1,0 +1,73 @@
+:root {
+	--principal-orange: #ff4800;
+	--second-orange: #fda880;
+	--third-orange: #d35527;
+	--principal-purple: #940073;
+	--second-purple: #c483b4;
+	--third-purple: #6e1159;
+	--principal-yellow: #cf9a36;
+	--second-yellow: #ecdca5;
+	--white: #feffff;
+	--ultraLighit-grey: #f6f8fa;
+	--light-grey: #d0d0d0;
+	--medium-grey: #5b5c5c;
+	--black: #242526;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+.cardValues {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 200px;
+	height: 200px;
+	margin: 0 auto;
+	background: var(--second-yellow);
+	border-radius: 20px;
+}
+
+.cardMinusPlus {
+	border: 2px solid var(--light-grey);
+	display: flex;
+	width: 70%;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 8px;
+	margin: 10px;
+}
+
+.buttons {
+	font-weight: 500;
+	font-size: 26px;
+	color: var(--principal-orange);
+	cursor: pointer;
+}
+
+.buttons:hover {
+	color: var(--principal-purple);
+}
+
+.amount {
+	font-size: 18px;
+}
+
+.buttonCard {
+	background: var(--principal-orange);
+	border: none;
+	width: 60%;
+	height: 24px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+.buttonCard:hover {
+	color: var(--ultraLighit-grey);
+}
