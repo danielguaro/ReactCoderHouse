@@ -3,12 +3,12 @@ import './itemCount.css';
 import { useState } from 'react';
 
 export const ItemCount = ({ stock, initial }) => {
-	const [count, setCount] = useState(1);
+	const [count, setCount] = useState(initial);
 
-	const plus = (inventario) => {
-		if (inventario == 0) {
+	const plus = () => {
+		if (stock == 0) {
 			plus.disabled = true;
-		} else if (inventario == count) {
+		} else if (stock == count) {
 			plus.disabled = true;
 			alert('Lo siento no tenemos mas stock');
 		} else {
@@ -16,19 +16,19 @@ export const ItemCount = ({ stock, initial }) => {
 		}
 	};
 	const minus = () => {
-		if (count > 1) {
+		if (initial == count) {
+			minus.disabled = true;
+		} else if (count > 1) {
 			setCount(count - 1);
 		}
 	};
-
-	const agregar = (inventario, CantidadItem) => {
-		if (inventario == 0 || CantidadItem == 0) {
+	const agregar = () => {
+		if (stock == 0 || initial == 0) {
 			agregar.disabled = true;
 			// alert(`Lo sentimos, actualmente no contamos con items en el stock`);
 		} else {
-			CantidadItem = count;
-			alert(`agregaste ${CantidadItem} items`);
-			setCount(1);
+			alert(`agregaste ${count} items`);
+			setCount(initial);
 		}
 	};
 
@@ -44,17 +44,12 @@ export const ItemCount = ({ stock, initial }) => {
 						-{' '}
 					</p>
 					<p className="amount">{count}</p>
-					<p className="buttons" onClick={() => plus(stock)}>
+					<p className="buttons" onClick={plus}>
 						{' '}
 						+{' '}
 					</p>
 				</div>
-				<button
-					className="buttonCard"
-					onClick={() => {
-						agregar(stock, initial);
-					}}
-				>
+				<button className="buttonCard" onClick={agregar}>
 					Agregar al carro
 				</button>
 			</div>
