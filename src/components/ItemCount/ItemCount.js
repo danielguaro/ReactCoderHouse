@@ -2,7 +2,7 @@ import './itemCount.css';
 
 import { useState } from 'react';
 
-export const ItemCount = ({ stock, initial }) => {
+export const ItemCount = ({ stock, initial, onAdd }) => {
 	const [count, setCount] = useState(initial);
 
 	const plus = () => {
@@ -27,10 +27,15 @@ export const ItemCount = ({ stock, initial }) => {
 			agregar.disabled = true;
 			// alert(`Lo sentimos, actualmente no contamos con items en el stock`);
 		} else {
-			alert(`agregaste ${count} items`);
+			// alert(`agregaste ${count} items`);
+			onAdd(count);
 			setCount(initial);
 		}
 	};
+
+	// const onAdd = () => {
+	// 	//logica
+	// };
 
 	return (
 		<>
