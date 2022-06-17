@@ -4,7 +4,7 @@ const CartWidget = () => {
 	return (
 		<>
 			<li className="menu_item">
-				<a href="./cart.html" className="menu_link">
+				<a href="" className="menu_link">
 					<img src={cart} alt="Carro" className="menu_img_cart" />
 				</a>
 			</li>

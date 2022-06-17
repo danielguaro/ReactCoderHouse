@@ -6,6 +6,7 @@ const productos = [
 		stock: 5,
 		price: 60000,
 		pictureUrl: '',
+		category: 'ramo',
 	},
 	{
 		id: '2',
@@ -14,6 +15,7 @@ const productos = [
 		stock: 8,
 		price: 120000,
 		pictureUrl: '',
+		category: 'ramo',
 	},
 	{
 		id: '3',
@@ -22,6 +24,7 @@ const productos = [
 		stock: 4,
 		price: 70000,
 		pictureUrl: '',
+		category: 'ramillete',
 	},
 	{
 		id: '4',
@@ -30,6 +33,7 @@ const productos = [
 		stock: 2,
 		price: 150000,
 		pictureUrl: '',
+		category: 'ramillete',
 	},
 ];
 

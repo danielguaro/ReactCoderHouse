@@ -42,6 +42,14 @@ header {
 	height: 14vh;
 }
 
+.color1 {
+	background: var(--medium-grey);
+}
+
+.color2 {
+	background: var(--light-grey);
+}
+
 .menu_container {
 	display: flex;
 	justify-content: space-between;

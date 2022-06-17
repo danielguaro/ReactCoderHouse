@@ -1,5 +1,7 @@
 import './styleNavBar.css';
 
+import { Link, NavLink } from 'react-router-dom';
+
 import CartWidget from '../CartWidget/CartWidget';
 import arrowHoriz from '../../assets/images/arrowHoriz.svg';
 import contacto from '../../assets/images/contact.svg';
@@ -13,16 +15,46 @@ export const NavBar = () => {
 		<>
 			<nav className="menu">
 				<section className="menu_container">
-					<a href="./home.html">
-						<div className="image_nav"></div>
-					</a>
+					<NavLink to="/">
+						<a href="">
+							<div className="image_nav"></div>
+						</a>
+					</NavLink>
 					<ul className="menu_links">
-						<li className="menu_item">
-							<a href="./home.html" className="menu_link">
-								<img src={home} alt="home" className="menu_img" />
-								Inicio
-							</a>
-						</li>
+						<NavLink
+							to="/"
+							// para cambiar el color cuando estoy en el y cuando no, a traves de un destructuring
+							className={({ isActive }) => (isActive ? 'color1' : 'color2')}
+						>
+							<li className="menu_item">
+								<a href="" className="menu_link">
+									<img src={home} alt="home" className="menu_img" />
+									Inicio
+								</a>
+							</li>
+						</NavLink>
+						<NavLink
+							to="/categoria/ramo"
+							className={({ isActive }) => (isActive ? 'color1' : 'color2')}
+						>
+							<li className="menu_item">
+								<a href="" className="menu_link">
+									<img src="./" alt="" className="menu_img" />
+									Ramos
+								</a>
+							</li>
+						</NavLink>
+						<NavLink
+							to="/categoria/ramillete"
+							className={({ isActive }) => (isActive ? 'color1' : 'color2')}
+						>
+							<li className="menu_item">
+								<a href="" className="menu_link">
+									<img src="./" alt="" className="menu_img" />
+									Ramilletes
+								</a>
+							</li>
+						</NavLink>
 						<li className="menu_item">
 							<a href="./frases.html" className="menu_link">
 								<img src={frase} alt="Carro" className="menu_img" />
@@ -74,8 +106,10 @@ export const NavBar = () => {
 								contactanos
 							</a>
 						</li>
-						<CartWidget />
 					</ul>
+					<Link to="/cart">
+						<CartWidget />
+					</Link>
 					<div className="menu_desplegable">
 						<img
 							src="./assets/desplegable.svg"
