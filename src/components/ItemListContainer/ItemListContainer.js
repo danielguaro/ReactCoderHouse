@@ -45,16 +45,10 @@ const ItemListContainer = ({ mensaje }) => {
 		}
 	}, [productos, cagetoriaId]);
 
-	const stock = 10;
-	const initial = 1; // Valor inicial
-	const onAdd = (cant) => {
-		alert(`agregaste ${cant} items`);
-	};
-
 	return (
 		<>
 			<h2>{mensaje} </h2>
-			<ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+
 			{loading ? (
 				<h3>Cargando...</h3>
 			) : (

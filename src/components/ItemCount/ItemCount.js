@@ -1,9 +1,12 @@
 import './itemCount.css';
 
+import { ButtonCount } from './ButtonCount';
+import { InputCount } from './InputCount';
 import { useState } from 'react';
 
-export const ItemCount = ({ stock, initial, onAdd }) => {
+export const ItemCount = ({ stock, initial, onAdd, producto }) => {
 	const [count, setCount] = useState(initial);
+	const [inputType, setInputType] = useState('button');
 
 	const plus = () => {
 		if (stock == 0) {
@@ -31,18 +34,21 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
 			onAdd(count);
 			setCount(initial);
 		}
+		setInputType('input');
 	};
 
 	// const onAdd = () => {
 	// 	//logica
 	// };
+	const totalPagar = producto.price * count;
+	console.log('totalPagar', totalPagar);
 
 	return (
 		<>
 			<div className="cardValues">
 				<img />
-				<h3>Flor 1</h3>
-				<p> $70000</p>
+				<h3>{producto.title}</h3>
+				<p> $ {totalPagar}</p>
 				<div className="cardMinusPlus">
 					<p className="buttons" onClick={minus}>
 						{' '}
@@ -54,9 +60,14 @@ export const ItemCount = ({ stock, initial, onAdd }) => {
 						+{' '}
 					</p>
 				</div>
-				<button className="buttonCard" onClick={agregar}>
+				{/* <button className="buttonCard" onClick={agregar}>
 					Agregar al carro
-				</button>
+				</button> */}
+				{inputType === 'button' ? (
+					<ButtonCount agregar={agregar} />
+				) : (
+					<InputCount />
+				)}
 			</div>
 		</>
 	);
