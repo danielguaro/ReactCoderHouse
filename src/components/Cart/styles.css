@@ -1,0 +1,30 @@
+.card-cart {
+	margin-top: 12px;
+	display: flex;
+	margin-top: 12px;
+	justify-content: space-between;
+	margin-right: 4px;
+}
+.img-cart {
+	width: 100px;
+	margin-left: 4px;
+	margin-right: 6px;
+}
+.inform-cart {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-end;
+}
+.littleInfo-cart {
+	display: flex;
+	flex-direction: row;
+	align-items: space-between;
+}
+.detail-p-cart {
+	color: var(--principal-orange);
+}
+.detail-cart {
+	color: var(--second-purple);
+	font-weight: bold;
+}

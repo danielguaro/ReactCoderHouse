@@ -2,121 +2,108 @@ import './styleNavBar.css';
 
 import { Link, NavLink } from 'react-router-dom';
 
+import ButtonNavbar from './ButtonNavbar';
 import CartWidget from '../CartWidget/CartWidget';
 import arrowHoriz from '../../assets/images/arrowHoriz.svg';
 import contacto from '../../assets/images/contact.svg';
 import frase from '../../assets/images/mensaje.svg';
 import home from '../../assets/images/home.svg';
 import momento from '../../assets/images/moments.svg';
+import styled from 'styled-components';
 import us from '../../assets/images/us.svg';
+import { useState } from 'react';
 
 export const NavBar = () => {
+	const [clicked, setClicked] = useState(false);
+	const handleClick = () => {
+		setClicked(!clicked);
+	};
+
 	return (
 		<>
 			<nav className="menu">
 				<section className="menu_container">
-					<NavLink to="/">
-						<a href="">
-							<div className="image_nav"></div>
-						</a>
+					<NavLink to="/" className="image_nav" onClick={clicked}>
+						<div></div>
 					</NavLink>
-					<ul className="menu_links">
+					<div className={`menu_links ${clicked ? 'active' : ''}`}>
 						<NavLink
 							to="/"
 							// para cambiar el color cuando estoy en el y cuando no, a traves de un destructuring
-							className={({ isActive }) => (isActive ? 'color1' : 'color2')}
+							className={({ isActive }) =>
+								isActive ? 'color1 menu_link ' : 'color2 menu_link '
+							}
+							onClick={handleClick}
 						>
-							<li className="menu_item">
-								<a href="" className="menu_link">
-									<img src={home} alt="home" className="menu_img" />
-									Inicio
-								</a>
-							</li>
+							<img src={home} alt="home" className="menu_img" />
+							Inicio
 						</NavLink>
 						<NavLink
 							to="/categoria/ramo"
-							className={({ isActive }) => (isActive ? 'color1' : 'color2')}
+							className={({ isActive }) =>
+								isActive ? 'color1 menu_link' : 'color2 menu_link'
+							}
+							onClick={handleClick}
 						>
-							<li className="menu_item">
-								<a href="" className="menu_link">
-									<img src="./" alt="" className="menu_img" />
-									Ramos
-								</a>
-							</li>
+							<img src="./" alt="" className="menu_img" />
+							Ramos
 						</NavLink>
 						<NavLink
 							to="/categoria/ramillete"
-							className={({ isActive }) => (isActive ? 'color1' : 'color2')}
+							className={({ isActive }) =>
+								isActive ? 'color1 menu_link' : 'color2 menu_link'
+							}
+							onClick={handleClick}
 						>
-							<li className="menu_item">
-								<a href="" className="menu_link">
-									<img src="./" alt="" className="menu_img" />
-									Ramilletes
-								</a>
-							</li>
+							<img src="./" alt="" className="menu_img" />
+							Ramilletes
 						</NavLink>
-						<li className="menu_item">
-							<a href="./frases.html" className="menu_link">
-								<img src={frase} alt="Carro" className="menu_img" />
-								Frases
-							</a>
-						</li>
-						<li className="menu_item menu_item-show">
-							<a href="#" className="menu_link">
-								<img src={momento} alt="" className="menu_img" />
-								Momentos
-								<img src={arrowHoriz} alt="arrow" className="menu_arrow" />
-							</a>
+						<NavLink
+							to="/frases"
+							className={({ isActive }) =>
+								isActive ? 'color1 menu_link' : 'color2 menu_link'
+							}
+							onClick={handleClick}
+						>
+							<img src={frase} alt="Carro" className="menu_img" />
+							Frases
+						</NavLink>
 
-							<ul className="menu_nesting">
-								<li className="menu_inside">
-									<a
-										href="/momentoAmor.html"
-										className="menu_link menu_link-inside"
-									>
-										Amor
-									</a>
-								</li>
-								<li className="menu_inside">
-									<a href="#" className="menu_link menu_link-inside">
-										Día de Madres
-									</a>
-								</li>
-								<li className="menu_inside">
-									<a href="#" className="menu_link menu_link-inside">
-										Condolencias
-									</a>
-								</li>
-								<li className="menu_inside">
-									<a href="#" className="menu_link menu_link-inside">
-										Cumpleaños
-									</a>
-								</li>
-							</ul>
-						</li>
-						<li className="menu_item">
-							<a href="#" className="menu_link">
-								<img src={us} alt="" className="menu_img" />
-								Quienes somos
-							</a>
-						</li>
-						<li className="menu_item">
-							<a href="#" className="menu_link">
-								<img src={contacto} alt="" className="menu_img" />
-								contactanos
-							</a>
-						</li>
-					</ul>
-					<Link to="/cart">
-						<CartWidget />
-					</Link>
-					<div className="menu_desplegable">
-						<img
-							src="./assets/desplegable.svg"
-							alt=""
-							className="menu_img-desple"
-						/>
+						<NavLink
+							to="/nosotros"
+							className={({ isActive }) =>
+								isActive ? 'color1 menu_link' : 'color2 menu_link'
+							}
+							onClick={handleClick}
+						>
+							<img src={us} alt="" className="menu_img" />
+							Quienes somos
+						</NavLink>
+
+						<NavLink
+							to="/contacto"
+							className={({ isActive }) =>
+								isActive ? 'color1 menu_link' : 'color2 menu_link'
+							}
+							onClick={handleClick}
+						>
+							<img src={contacto} alt="" className="menu_img" />
+							contactanos
+						</NavLink>
+						<NavLink
+							to="/cart"
+							onClick={handleClick}
+							className={({ isActive }) =>
+								isActive ? 'color1 menu_link' : 'color2 menu_link'
+							}
+						>
+							<CartWidget />
+						</NavLink>
 					</div>
+					<div className="menu_desplegable">
+						<ButtonNavbar clicked={clicked} handleClick={handleClick} />
+					</div>
+					<div className={`initial ${clicked ? 'active' : ''}`}></div>
 				</section>
 			</nav>
 		</>

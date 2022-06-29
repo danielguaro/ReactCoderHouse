@@ -1,3 +1,5 @@
+import './styles.css';
+
 import { CartContext, useCartContext } from '../../context/cartContext';
 import { Children, useContext } from 'react';
 
@@ -31,21 +33,25 @@ const ItemDetail = ({ producto }) => {
 
 	return (
 		<>
-			<div>
-				<img src={producto.pictureUrl} />
-			</div>
-			<div>
-				<h2>{producto.title}</h2>
-				<h3>{producto.description}</h3>
-				<h4>{producto.price}</h4>
-			</div>
-			<div>
-				<ItemCount
-					stock={stock}
-					initial={initial}
-					onAdd={onAdd}
-					producto={producto}
-				/>
+			<div className="allDetails">
+				<div className="cardDetail">
+					<div>
+						<img className="imgDetail" src={producto.pictureUrl} />
+					</div>
+					<div>
+						<h2 className="titleDetail">{producto.title}</h2>
+						<h3 className="descriptionDetail">{producto.description}</h3>
+						<h4 className="priceDetail">$ {producto.price}</h4>
+					</div>
+				</div>
+				<div>
+					<ItemCount
+						stock={stock}
+						initial={initial}
+						onAdd={onAdd}
+						producto={producto}
+					/>
+				</div>
 			</div>
 		</>
 	);

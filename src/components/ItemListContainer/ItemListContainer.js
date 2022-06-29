@@ -4,7 +4,7 @@ import ConsumoApi from './ConsumoApi';
 import Item from '../Item/Item';
 import { ItemCount } from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
-import { getFetch } from '../getFetch/getFetch';
+import { getFetch } from '../../helpers/getFetch';
 import { useParams } from 'react-router-dom';
 
 const ItemListContainer = ({ mensaje }) => {
@@ -55,7 +55,9 @@ const ItemListContainer = ({ mensaje }) => {
 				// productos.map((producto) => (
 				// 	<Item key={producto.id} producto={producto} />
 				// ))
-				<ItemList productos={productos} />
+				<div className="filterResult">
+					<ItemList productos={productos} />
+				</div>
 			)}
 			{/* <ConsumoApi /> */}
 		</>

@@ -5,7 +5,7 @@ import AbstracCaso2 from '../clase9/AbstracCaso2';
 import Input from '../clase9/Input';
 import Intercambiabilidad from '../clase9/Intercambiabilidad';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { getFetch } from '../getFetch/getFetch';
+import { getFetch } from '../../helpers/getFetch';
 import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {

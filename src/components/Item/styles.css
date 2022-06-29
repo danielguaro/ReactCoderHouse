@@ -1,0 +1,79 @@
+.filterResult {
+	display: grid;
+	gap: 20px;
+	justify-content: center;
+	grid-template-columns: repeat(auto-fit, 120px);
+	height: auto;
+}
+
+.cardFilter {
+	background: var(--second-yellow);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	transition: ease 0.3s;
+	border-radius: 10px;
+	height: 300px;
+	margin-bottom: 20px;
+}
+
+.img-cardFilter {
+	width: 88%;
+	height: 88%;
+	display: block;
+	margin: 0 auto;
+	object-fit: contain;
+}
+
+.text-cardFilter {
+	text-decoration: none;
+	color: var(--principal-orange);
+	font-weight: 500;
+	font-size: 14px;
+	text-align: center;
+	margin: 10px 2px;
+}
+
+.price-cardFilter {
+	color: var(--principal-purple);
+	font-weight: 300;
+	font-size: 14px;
+	text-align: center;
+	margin: 2px 2px;
+}
+
+.btn-cardFilter {
+	background: var(--principal-purple);
+	color: var(--light-grey);
+	display: block;
+	padding: 2px 10px;
+	border: 2px solid var(--medium-grey);
+	border-radius: 6px;
+	margin: 6px auto;
+}
+
+/* <-------------- RESPONSIVE -------------->*/
+@media (min-width: 800px) {
+	.filterResult {
+		grid-template-columns: repeat(auto-fit, minmax(120px, 330px));
+		margin-bottom: 40px;
+	}
+	.cardFilter {
+		height: auto;
+		margin: 20px auto;
+	}
+	.btn-cardFilter {
+		font-size: 20px;
+		margin-bottom: 12px;
+	}
+	.text-cardFilter {
+		font-size: 18px;
+		text-align: center;
+		margin: 10px 1px;
+		font-weight: bold;
+	}
+	.price-cardFilter {
+		margin-top: 6px;
+		font-size: 18px;
+	}
+}

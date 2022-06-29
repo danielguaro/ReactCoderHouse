@@ -1,3 +1,5 @@
+import './styles.css';
+
 import { useCartContext } from '../../context/cartContext';
 
 const Cart = () => {
@@ -9,9 +11,23 @@ const Cart = () => {
 			<ul>
 				{cart.map((item) => (
 					<li key={item.id}>
-						<img src={item.pictureUrl} />
-						Nombre producto: {item.title} Precio: ${item.price} Cantidad:{' '}
-						{item.cantidad}
+						<div className="card-cart">
+							<img src={item.pictureUrl} className="img-cart" />
+							<div className="inform-cart">
+								<div className="littleInfo-cart">
+									<p className="detail-p-cart">producto: </p>
+									<h3 className="detail-cart"> {item.title}</h3>
+								</div>
+								<div className="littleInfo-cart">
+									<p className="detail-p-cart"> Precio: </p>
+									<h3 className="detail-cart"> ${item.price}</h3>
+								</div>
+								<div className="littleInfo-cart">
+									<p className="detail-p-cart"> Cantidad: </p>
+									<h3 className="detail-cart"> {item.cantidad}</h3>
+								</div>
+							</div>
+						</div>
 					</li>
 				))}
 			</ul>
