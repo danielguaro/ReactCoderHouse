@@ -17,17 +17,18 @@ const ItemDetail = ({ producto }) => {
 		alert(`agregaste ${cant} items`);
 		// Aquí llamo el objeto destructurado addToCart, lo que hago es crear un objeto nuevo que tiene el producto, pero ademas la cantidad
 		// el spread operator es para que pegue todo en el mismo objeto y no cree dos
-		const findProduct = cart.find((pro) => pro.id === producto.id);
-		if (findProduct) {
-			// setInterval(() => {
-			// 	findProduct.cantidad++;
-			// 	updateItem(findProduct);
-			// }, 3000);
-			findProduct.cantidad += cant;
-			updateItem(findProduct);
-		} else {
-			addToCart({ ...producto, cantidad: cant });
-		}
+		// const findProduct = cart.find((pro) => pro.id === producto.id);
+		// if (findProduct) {
+		// 	// setInterval(() => {
+		// 	// 	findProduct.cantidad++;
+		// 	// 	updateItem(findProduct);
+		// 	// }, 3000);
+		// 	findProduct.cantidad += cant;
+		// 	updateItem(findProduct);
+		// } else {
+		// 	addToCart({ ...producto, cantidad: cant });
+		// }
+		addToCart(producto, cant);
 	};
 	console.log('cart', cart);
 

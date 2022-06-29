@@ -1,4 +1,7 @@
 import foto1 from '../../src/assets/images/momentAmor/1001.jpeg';
+import foto2 from '../../src/assets/images/momentAmor/1002.jpeg';
+import foto3 from '../../src/assets/images/momentAmor/1003.jpeg';
+import foto4 from '../../src/assets/images/momentAmor/1004.jpeg';
 
 const productos = [
 	{
@@ -16,7 +19,7 @@ const productos = [
 		description: 'lorem ipsu...',
 		stock: 8,
 		price: 120000,
-		pictureUrl: '/public/assets/momentAmor/1002.jpeg',
+		pictureUrl: foto2,
 		category: 'ramo',
 	},
 	{
@@ -25,7 +28,7 @@ const productos = [
 		description: 'lorem ipsu...',
 		stock: 4,
 		price: 70000,
-		pictureUrl: '',
+		pictureUrl: foto3,
 		category: 'ramillete',
 	},
 	{
@@ -34,7 +37,7 @@ const productos = [
 		description: 'lorem ipsu...',
 		stock: 2,
 		price: 150000,
-		pictureUrl: '',
+		pictureUrl: foto4,
 		category: 'ramillete',
 	},
 ];
