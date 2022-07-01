@@ -1,7 +1,7 @@
 import './styles.css';
 
 import { CartContext, useCartContext } from '../../context/cartContext';
-import { Children, useContext } from 'react';
+import { Children, useContext, useEffect, useState } from 'react';
 
 import { ItemCount } from '../ItemCount/ItemCount';
 

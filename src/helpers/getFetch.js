@@ -5,7 +5,7 @@ import foto4 from '../../src/assets/images/momentAmor/1004.jpeg';
 
 const productos = [
 	{
-		id: '1',
+		id: 'ZuKjugYVh9x4uz1ejJnA',
 		title: 'flor1',
 		description: 'lorem ipsu...',
 		stock: 5,
@@ -14,7 +14,7 @@ const productos = [
 		category: 'ramo',
 	},
 	{
-		id: '2',
+		id: 'bfkdyElfcERJNvDwERQZ',
 		title: 'flor2',
 		description: 'lorem ipsu...',
 		stock: 8,
@@ -23,7 +23,7 @@ const productos = [
 		category: 'ramo',
 	},
 	{
-		id: '3',
+		id: 'qIKns1bSQ4vUTAsdrwxy',
 		title: 'flor3',
 		description: 'lorem ipsu...',
 		stock: 4,
@@ -32,7 +32,7 @@ const productos = [
 		category: 'ramillete',
 	},
 	{
-		id: '4',
+		id: 'uGNl2uVlR3CbYtjvMhEl',
 		title: 'flor4',
 		description: 'lorem ipsu...',
 		stock: 2,

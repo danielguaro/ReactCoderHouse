@@ -6,7 +6,6 @@ import { memo } from 'react';
 //Recordar, memo se utiliza para evitar el rendering constante de componentes o estados que se que NO se verán alterados
 
 const Item = memo(({ producto }) => {
-	console.log(producto.pictureUrl);
 	return (
 		<>
 			<div className="cardFilter" /*key={producto.id}*/>
