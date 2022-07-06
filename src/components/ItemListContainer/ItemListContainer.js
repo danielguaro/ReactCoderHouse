@@ -24,10 +24,10 @@ const ItemListContainer = ({ mensaje }) => {
 	//
 	//Aplicando firestore
 	useEffect(() => {
+		const db = getFirestore();
+		// Como se trae todo, ya no se especifica el id
+		const queryCollection = collection(db, 'productos');
 		if (cagetoriaId) {
-			const db = getFirestore();
-			// Como se trae todo, ya no se especifica el id
-			const queryCollection = collection(db, 'productos');
 			const queryCollectionFilter = query(
 				queryCollection,
 				where('category', '==', cagetoriaId)
@@ -43,9 +43,6 @@ const ItemListContainer = ({ mensaje }) => {
 					setloading(false);
 				});
 		} else {
-			const db = getFirestore();
-			// Como se trae todo, ya no se especifica el id
-			const queryCollection = collection(db, 'productos');
 			getDocs(queryCollection)
 				.then((resp) =>
 					setProductos(
@@ -57,7 +54,7 @@ const ItemListContainer = ({ mensaje }) => {
 					setloading(false);
 				});
 		}
-	}, [productos, cagetoriaId]);
+	}, [cagetoriaId]); //tenia: cagetoriaId(este creo que si va)  productos(esto No Creo que vaya)
 	// console.log(productos);
 	//
 
@@ -87,7 +84,7 @@ const ItemListContainer = ({ mensaje }) => {
 	// 				setloading(false);
 	// 			});
 	// 	}
-	// }, [productos, cagetoriaId]);
+	// }, [ cagetoriaId]);
 
 	return (
 		<>

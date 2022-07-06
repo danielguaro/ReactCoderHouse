@@ -7,11 +7,13 @@ import { useState } from 'react';
 export const ItemCount = ({ stock, initial, onAdd, producto }) => {
 	const [count, setCount] = useState(initial);
 	const [inputType, setInputType] = useState('button');
+	console.log('producto-------------*--', producto.stock);
 
 	const plus = () => {
-		if (stock == 0) {
+		if (producto.stock == 0) {
 			plus.disabled = true;
-		} else if (stock == count) {
+			agregar.disabled = true;
+		} else if (producto.stock == count) {
 			plus.disabled = true;
 			alert('Lo siento no tenemos mas stock');
 		} else {
@@ -26,7 +28,8 @@ export const ItemCount = ({ stock, initial, onAdd, producto }) => {
 		}
 	};
 	const agregar = () => {
-		if (stock == 0 || initial == 0) {
+		if (producto.stock === 0) {
+			setInputType('NoStock');
 			agregar.disabled = true;
 			// alert(`Lo sentimos, actualmente no contamos con items en el stock`);
 		} else {

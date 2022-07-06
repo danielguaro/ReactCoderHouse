@@ -16,9 +16,13 @@ const Item = memo(({ producto }) => {
 				<p>stock: {producto.stock}</p>
 				<p>categoria: {producto.category}</p>
 				{/* Para implementar de forma dinamica el ingreso cada producto */}
-				<Link to={`/detalle/${producto.id}`}>
-					<button className="btn-cardFilter"> Detalle del producto</button>
-				</Link>
+				{producto.stock == 0 ? (
+					<button className="btn-cardFilter">Sin stock</button>
+				) : (
+					<Link to={`/detalle/${producto.id}`}>
+						<button className="btn-cardFilter"> Detalle del producto</button>
+					</Link>
+				)}
 			</div>
 		</>
 	);

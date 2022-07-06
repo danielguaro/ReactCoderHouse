@@ -9,6 +9,10 @@ const ItemDetailContainer = () => {
 	const [producto, setProducto] = useState({});
 	const [loading, setLoading] = useState(true);
 
+	// Para quitar el hardCoding que va en el fetch('2'), implementando un hook(useParams) de react router DOM, con un destructuring
+	const { id } = useParams();
+	console.log(id); // el id del elemento
+
 	useEffect(() => {
 		const db = getFirestore();
 		//Doc recibe 3 parametros
@@ -22,10 +26,6 @@ const ItemDetailContainer = () => {
 				setLoading(false);
 			});
 	}, [loading]);
-
-	// Para quitar el hardCoding que va en el fetch('2'), implementando un hook(useParams) de react router DOM, con un destructuring
-	const { id } = useParams();
-	console.log(id); // el id del elemento
 
 	// useEffect(() => {
 	// 	getFetch(id)
