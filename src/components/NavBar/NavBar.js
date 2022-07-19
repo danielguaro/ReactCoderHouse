@@ -1,15 +1,11 @@
 import './styleNavBar.css';
 
-import { Link, NavLink } from 'react-router-dom';
-
 import ButtonNavbar from './ButtonNavbar';
 import CartWidget from '../CartWidget/CartWidget';
-import arrowHoriz from '../../assets/images/arrowHoriz.svg';
+import { NavLink } from 'react-router-dom';
 import contacto from '../../assets/images/contact.svg';
 import frase from '../../assets/images/mensaje.svg';
 import home from '../../assets/images/home.svg';
-import momento from '../../assets/images/moments.svg';
-import styled from 'styled-components';
 import us from '../../assets/images/us.svg';
 import { useState } from 'react';
 

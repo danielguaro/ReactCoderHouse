@@ -42,14 +42,6 @@ const productos = [
 	},
 ];
 
-// export const getFetch = () => {
-// 	return new Promise((resolve, reject) => {
-// 		setTimeout(() => {
-// 			resolve(productos);
-// 		}, 3000);
-// 	});
-// };
-
 export const getFetch = (id) => {
 	return new Promise((resolve, reject) => {
 		setTimeout(() => {

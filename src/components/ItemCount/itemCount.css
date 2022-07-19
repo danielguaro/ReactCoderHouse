@@ -24,7 +24,7 @@
 .cardValues {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-evenly;
+	justify-content: center;
 	align-items: center;
 	width: 200px;
 	height: 200px;
@@ -62,10 +62,11 @@
 .buttonCard {
 	background: var(--principal-orange);
 	border: none;
-	width: 60%;
-	height: 24px;
+	height: 25px;
 	border-radius: 6px;
 	cursor: pointer;
+	padding: 5px;
+	margin: 4px;
 }
 
 .buttonCard:hover {

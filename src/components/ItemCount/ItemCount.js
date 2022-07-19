@@ -7,7 +7,6 @@ import { useState } from 'react';
 export const ItemCount = ({ stock, initial, onAdd, producto }) => {
 	const [count, setCount] = useState(initial);
 	const [inputType, setInputType] = useState('button');
-	console.log('producto-------------*--', producto.stock);
 
 	const plus = () => {
 		if (producto.stock == 0) {
@@ -31,20 +30,14 @@ export const ItemCount = ({ stock, initial, onAdd, producto }) => {
 		if (producto.stock === 0) {
 			setInputType('NoStock');
 			agregar.disabled = true;
-			// alert(`Lo sentimos, actualmente no contamos con items en el stock`);
 		} else {
-			// alert(`agregaste ${count} items`);
 			onAdd(count);
 			setCount(initial);
 		}
 		setInputType('input');
 	};
 
-	// const onAdd = () => {
-	// 	//logica
-	// };
 	const totalPagar = producto.price * count;
-	console.log('totalPagar', totalPagar);
 
 	return (
 		<>
@@ -63,9 +56,6 @@ export const ItemCount = ({ stock, initial, onAdd, producto }) => {
 						+{' '}
 					</p>
 				</div>
-				{/* <button className="buttonCard" onClick={agregar}>
-					Agregar al carro
-				</button> */}
 				{inputType === 'button' ? (
 					<ButtonCount agregar={agregar} />
 				) : (

@@ -1,6 +1,7 @@
 import './styles.css';
 
 import { Link } from 'react-router-dom';
+import { ShowPic } from '../../helpers/showPic';
 import { memo } from 'react';
 
 //Recordar, memo se utiliza para evitar el rendering constante de componentes o estados que se que NO se verán alterados
@@ -8,14 +9,12 @@ import { memo } from 'react';
 const Item = memo(({ producto }) => {
 	return (
 		<>
-			<div className="cardFilter" /*key={producto.id}*/>
+			<div className="cardFilter">
 				<h3 className="text-cardFilter">{producto.title}</h3>
-				<img src={producto.pictureUrl} className="img-cardFilter" />
-				{/* <p>{producto.description}</p> */}
+				<img src={ShowPic(producto)} className="img-cardFilter" />
 				<p className="price-cardFilter">${producto.price}</p>
 				<p>stock: {producto.stock}</p>
 				<p>categoria: {producto.category}</p>
-				{/* Para implementar de forma dinamica el ingreso cada producto */}
 				{producto.stock == 0 ? (
 					<button className="btn-cardFilter">Sin stock</button>
 				) : (
