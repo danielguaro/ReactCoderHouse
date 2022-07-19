@@ -2,12 +2,12 @@
 Here I made a project that recreate a flowers sale page, unfortunately I didn’t have enough time to make it pretty and better, cuz I started to work and the time that I could use to work here were limited, this project will be scored by a docent that teaches me all that I’ve done here, also this project was made it with ReactJs.
 
 ## Features
-Visualize all the items
-Serach by category 
-See the details of an item
-Put the item in the cart
-Complete the form
-Data will be save in Firestore
+* Visualize all the items
+* Serach by category 
+* See the details of an item
+* Put the item in the cart
+* Complete the form
+* Data will be save in Firestore
 
 
 ## Demo
