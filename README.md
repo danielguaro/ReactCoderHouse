@@ -1,3 +1,6 @@
+# React personal project 
+Here I made a project that recreate a flowers sale page, unfortunately I didn’t have enough time to make it pretty and better, cuz I started to work and the time that I could use to work here were limited, this project will be scored by a docent that teaches me all that I’ve done here, also this project was made it with ReactJs.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
